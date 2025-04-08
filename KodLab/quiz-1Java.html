@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz - Java</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="faviconn.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+    header img {
+      height: 40px;
+      cursor: pointer;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #007BFF;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options label {
+      display: block;
+      background: #e9f0f7;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .options label:hover {
+      background: #d0e4f7;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+    .result {
+      text-align: center;
+    }
+    .result p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="KodLab.html"><img src="logo123.png" alt="Logo" /></a>
+    <nav>
+      <a href="index.html">Ana Sayfa</a>
+      <a href="lessons.html">Dersler</a>
+    </nav>
+  </header>
+
+  <div class="container" id="quiz-container">
+    <h1>Quiz - Java 1</h1>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Java hangi tür bir programlama dilidir?</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="a" /> Nesne yönelimli</label>
+          <label><input type="radio" name="q1" value="b" /> İşletim sistemi</label>
+          <label><input type="radio" name="q1" value="c" /> Biçimlendirme dili</label>
+          <label><input type="radio" name="q1" value="d" /> Veritabanı dili</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>2. Java'da ana metot nasıl tanımlanır?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="a" /> public static void main(String[] args)</label>
+          <label><input type="radio" name="q2" value="b" /> def main()</label>
+          <label><input type="radio" name="q2" value="c" /> start program()</label>
+          <label><input type="radio" name="q2" value="d" /> begin()</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>3. Java dosya uzantısı nedir?</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="a" /> .java</label>
+          <label><input type="radio" name="q3" value="b" /> .jav</label>
+          <label><input type="radio" name="q3" value="c" /> .js</label>
+          <label><input type="radio" name="q3" value="d" /> .class</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>4. Java'da yorum satırı nasıl yazılır?</p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="a" /> // yorum</label>
+          <label><input type="radio" name="q4" value="b" /> # yorum</label>
+          <label><input type="radio" name="q4" value="c" /> <!-- yorum --></label>
+          <label><input type="radio" name="q4" value="d" /> %% yorum</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>5. Java'da veri tipi hangisidir?</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="a" /> int</label>
+          <label><input type="radio" name="q5" value="b" /> digit</label>
+          <label><input type="radio" name="q5" value="c" /> decimal</label>
+          <label><input type="radio" name="q5" value="d" /> floaty</label>
+        </div>
+      </div>
+
+      <button type="submit">Quiz'i Bitir</button>
+    </form>
+  </div>
+
+  <div class="container result" id="result-container" style="display: none;">
+    <h1>Sonuçlar</h1>
+    <p id="score"></p>
+    <p id="correct-answers"></p>
+    <p id="wrong-answers"></p>
+    <button onclick="window.location.reload()">Tekrar Dene</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 KodLab. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script>
+    const correctAnswers = {
+      q1: 'a',
+      q2: 'a',
+      q3: 'a',
+      q4: 'a',
+      q5: 'a'
+    };
+
+    document.getElementById('quizForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      let score = 0;
+      let correctCount = 0;
+      let wrongCount = 0;
+      const form = event.target;
+
+      for (let question in correctAnswers) {
+        const answer = form.elements[question].value;
+        if (answer === correctAnswers[question]) {
+          score += 20;
+          correctCount++;
+        } else {
+          wrongCount++;
+        }
+      }
+
+      document.getElementById('quiz-container').style.display = 'none';
+      document.getElementById('result-container').style.display = 'block';
+      document.getElementById('score').textContent = `Skorunuz: ${score}`;
+      document.getElementById('correct-answers').textContent = `Doğru Sayısı: ${correctCount}`;
+      document.getElementById('wrong-answers').textContent = `Yanlış Sayısı: ${wrongCount}`;
+    });
+  </script>
+
+</body>
+</html>
