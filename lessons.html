@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>KodLab - Dersler</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/png" href="faviconn.png">
+
+
+    <style>
+        main {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 36px;
+            color: #333;
+        }
+
+        .lesson-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .lesson-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .lesson-card h2 {
+            margin-bottom: 15px;
+            color: #444;
+            font-size: 22px;
+        }
+
+        .lesson-card a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #0d47a1;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .lesson-card a:hover {
+            background-color: #0d47a1;
+        }
+
+        footer {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Üst Menü -->
+    <header>
+        <div class="header-container">
+            <a href="KodLab.html" class="logo-link">
+                <img src="logo123.png" alt="KodLab Logo" class="logo" />
+            </a>
+            <nav>
+                <a href="KodLab.html">Ana Sayfa</a>
+                <a href="lessons.html">Dersler</a>
+                <a href="signup.html">Kayıt Ol</a>
+            </nav>
+            
+        </div>
+    </header>
+
+    <!-- İçerik -->
+    <main>
+        <h1>Dersler</h1>
+        <div class="lesson-buttons">
+            <div class="lesson-card">
+                <h2>HTML</h2>
+                <a href="quiz-1HTML.html">HTML Başlangıç</a><br>
+                <a href="quiz-2HTML.html">HTML İleri</a>
+            </div>
+            <div class="lesson-card">
+                <h2>CSS</h2>
+                <a href="quiz-1CSS.html">CSS Başlangıç</a><br>
+                <a href="quiz-2CSS.html">CSS İleri</a>
+            </div>
+            <div class="lesson-card">
+                <h2>JavaScript</h2>
+                <a href="quiz-1JavaScript.html">JavaScript Başlangıç</a><br>
+                <a href="quiz-2JavaScript.html">JavaScript İleri</a>
+            </div>
+            <div class="lesson-card">
+                <h2>Python</h2>
+                <a href="quiz-1Python.html">Python Başlangıç</a><br>
+                <a href="quiz-2Python.html">Python İleri</a>
+            </div>
+            <div class="lesson-card">
+                <h2>Java</h2>
+                <a href="quiz-1Java.html">Java Başlangıç</a><br>
+                <a href="quiz-2Java.html">Java İleri</a>
+            </div>
+            <div class="lesson-card">
+                <h2>C++</h2>
+                <a href="quiz-1C++.html">C++ Başlangıç</a><br>
+                <a href="quiz-2C++.html">C++ İleri</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Alt Menü -->
+    <footer>
+        <p>&copy; 2025 KodLab. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>

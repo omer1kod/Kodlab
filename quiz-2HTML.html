@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz - HTML</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="faviconn.png">
+
+  <style>
+     body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+    header img {
+      height: 40px;
+      cursor: pointer;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #007BFF;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .options label {
+      display: block;
+      background: #e9f0f7;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .options label:hover {
+      background: #d0e4f7;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+    .result {
+      text-align: center;
+    }
+    .result p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="KodLab.html"><img src="logo123.png" alt="Logo" /></a>
+    <nav>
+      <a href="KodLab.html">Ana Sayfa</a>
+      <a href="lessons.html">Dersler</a>
+    </nav>
+  </header>
+
+  <div class="container" id="quiz-container">
+    <h1>Quiz - HTML 2</h1>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. TCP/IP protokolü ne işe yarar?</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="a" /> Ağ üzerinden veri iletimini sağlar</label>
+          <label><input type="radio" name="q1" value="b" /> Görsel tasarım yapar</label>
+          <label><input type="radio" name="q1" value="c" /> Ses dosyalarını düzenler</label>
+          <label><input type="radio" name="q1" value="d" /> Yazıcıyı yönetir</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>2. Hangi HTML etiketi bir bağlantıyı tanımlar?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="a" /> &lt;a&gt;</label>
+          <label><input type="radio" name="q2" value="b" /> &lt;link&gt;</label>
+          <label><input type="radio" name="q2" value="c" /> &lt;href&gt;</label>
+          <label><input type="radio" name="q2" value="d" /> &lt;url&gt;</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>3. JavaScript'te hangi ifade doğrudur?</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="a" /> JavaScript sunucu taraflıdır</label>
+          <label><input type="radio" name="q3" value="b" /> JavaScript istemci taraflıdır</label>
+          <label><input type="radio" name="q3" value="c" /> JavaScript sadece veritabanı yönetir</label>
+          <label><input type="radio" name="q3" value="d" /> JavaScript bir işletim sistemidir</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>4. CSS ile ilgili hangi ifade doğrudur?</p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="a" /> CSS bir veritabanı dilidir</label>
+          <label><input type="radio" name="q4" value="b" /> CSS bir stil şemasıdır</label>
+          <label><input type="radio" name="q4" value="c" /> CSS bir programlama dilidir</label>
+          <label><input type="radio" name="q4" value="d" /> CSS bir donanım bileşenidir</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>5. Hangi protokol e-posta göndermek için kullanılır?</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="a" /> HTTP</label>
+          <label><input type="radio" name="q5" value="b" /> SMTP</label>
+          <label><input type="radio" name="q5" value="c" /> FTP</label>
+          <label><input type="radio" name="q5" value="d" /> TCP/IP</label>
+        </div>
+      </div>
+
+      <button type="submit">Quiz'i Bitir</button>
+    </form>
+  </div>
+
+  <div class="container result" id="result-container" style="display: none;">
+    <h1>Sonuçlar</h1>
+    <p id="score"></p>
+    <p id="correct-answers"></p>
+    <p id="wrong-answers"></p>
+    <button onclick="window.location.reload()">Tekrar Dene</button>
+  </div>
+
+  <footer>
+    &copy; 2025 Eğitim Platformu. Tüm hakları saklıdır.
+  </footer>
+
+  <script>
+    const correctAnswers = {
+      q1: 'a',
+      q2: 'a',
+      q3: 'b',
+      q4: 'b',
+      q5: 'b'
+    };
+
+    document.getElementById('quizForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      let score = 0;
+      let correctCount = 0;
+      let wrongCount = 0;
+      const form = event.target;
+
+      for (let question in correctAnswers) {
+        const answer = form.elements[question].value;
+        if (answer === correctAnswers[question]) {
+          score += 20;
+          correctCount++;
+        } else {
+          wrongCount++;
+        }
+      }
+
+      document.getElementById('quiz-container').style.display = 'none';
+      document.getElementById('result-container').style.display = 'block';
+      document.getElementById('score').textContent = `Skorunuz: ${score}`;
+      document.getElementById('correct-answers').textContent = `Doğru Sayısı: ${correctCount}`;
+      document.getElementById('wrong-answers').textContent = `Yanlış Sayısı: ${wrongCount}`;
+    });
+  </script>
+</body>
+
+</html>
